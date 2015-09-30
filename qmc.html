@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Wellington QMC</title>
+        <link rel='stylesheet' href='css/bootstrap-darkblue.css'>
+         <link rel="stylesheet" href="http://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+    </head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <header id="header">
+        <p class="app-title pull-left"><a href="index.html">Wellington QMC</a></p>
+        <div id="nav-global" aria-label="application menu">
+            <ul class="nav nav-pills pull-right flush-right" role="menubar">
+               <li class="dropdown" role="menuitem" aria-haspopup="true">
+                    <a tabindex="2" href="" data-toggle="dropdown" class="dropdown-toggle">Filters<b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li ><a href="">Date</a></li>
+                        <li ><a href="">Time</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <nav id="nav" class="navbar" role="navigation">
+        <div class="navbar-inner">
+            <div class="container">
+                <button class="btn btn-navbar collapsed" data-target=".nav-collapse" data-toggle="collapse" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="current-page">Search</div>
+                <div class="nav-collapse collapse" id="nav-main">
+                    <ul class="nav">
+                        <li class=""><a href="#/approchSearch">Home</a></li>
+                        
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Application <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class=""><a href="#/productSearch">Product</a></li>
+                                    <li class=""><a href="#/documentSearch">Documet</a></li>
+                                    <li class=""><a href="#/vehicleSearch">Vehicle</a></li>
+                                    <li class=""><a href="#/emailSearch">Email</a></li>
+                                </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div class="container" ng-app>
+      <div class="row">
+           <div class="span4">
+             <b>GRAPH</b>
+          </div>
+          <div class="span8">
+              <table id="myTable" class="table table-striped table-bordered">
+                   <thead>
+                       <tr>
+                          <th ng-repeat="tableHeader in ['Home','Address','Pin code','Sequence','Signature']">{{tableHeader}}</th>
+                       </tr>
+                   </thead>
+                   <tbody >
+                       <tr ng-repeat="row in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
+                           <td ng-repeat="name in ['Home','Address','Pin code','Sequence','10-11-2015 11:12:00']">{{row}}--{{name}}</td>
+                       </tr>
+                      
+                   </tbody>
+               </table>
+          </div>
+          
+      </div>
+      
+        
+
+    </div>
+
+    <script src="lib/bootstrap.js"></script>
+     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.min.js"></script>
+    <script src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+    <script>
+       $(document).ready(function(){
+        $('#myTable').DataTable();
+      });
+    </script>
+
+</body>
+</html>
+
